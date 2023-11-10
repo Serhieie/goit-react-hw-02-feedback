@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from 'components/App';
+import App from 'components/App';
+import { ThemeProvider } from '@emotion/react';
+import { rootsColors } from './constants';
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root');
+const rootContainer = ReactDOM.createRoot(root);
+
+rootContainer.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={{ rootsColors }}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
